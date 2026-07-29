@@ -117,6 +117,7 @@
     .t-item{gap:18px;}
     .card{padding:36px 24px;}
     #hero .vine-top, #hero .vine-bottom{width:88%;}
+    #hero .names{font-size:clamp(2.1rem, 11vw, 3.2rem);}
   }
 
   /* ---------- Hero ---------- */
@@ -129,7 +130,11 @@
   #hero .vine-bottom{position:absolute; bottom:0; left:50%; transform:translateX(-50%) rotate(180deg); width:min(520px,90%); will-change:transform;}
   #hero .eyebrow{margin-bottom:28px; opacity:0; animation:rise 1s ease forwards 0.2s;}
   #hero .names{
-    font-size:clamp(3rem, 9vw, 6rem); line-height:1; color:var(--ink);
+    font-size:clamp(2.6rem, 9vw, 6rem); line-height:1.15; color:var(--ink);
+    white-space:normal;
+  }
+  #hero .names .name-word{
+    display:inline-block; white-space:nowrap;
   }
   #hero .names .letter{
     display:inline-block; opacity:0; transform:translateY(24px) rotate(3deg);
@@ -139,6 +144,7 @@
   #hero .names .amp{
     font-family:'Mrs Saint Delafield', cursive; color:var(--gold);
     font-size:0.6em; display:inline-block; margin:0 0.08em; vertical-align:-0.08em;
+    white-space:nowrap;
   }
   #hero .date-line{
     margin-top:26px; font-size:1.05rem; letter-spacing:0.12em;
@@ -343,7 +349,7 @@
   </svg>
 
   <p class="eyebrow">Nos casamos</p>
-  <h1 class="names" id="hero-names">Valentina<span class="amp">&amp;</span>Sebastián</h1>
+  <h1 class="names" id="hero-names"><span class="name-word">Valentina</span> <span class="amp">&amp;</span> <span class="name-word">Sebastián</span></h1>
   <p class="date-line">14 de febrero, 2027</p>
   <p class="place-line">Casa Hacienda La Villa — Lima, Perú</p>
 
@@ -368,13 +374,16 @@
 <!-- ============ COUNTDOWN ============ -->
 <section id="countdown">
   <p class="eyebrow">Faltan</p>
-  <h2>Para decir "sí, acepto"</h2>
+  <br></h2>
+  <br></h2>
   <div class="clock" id="clock">
     <div class="cell"><div class="num" id="cd-days">00</div><div class="label">Días</div></div>
     <div class="cell"><div class="num" id="cd-hours">00</div><div class="label">Horas</div></div>
     <div class="cell"><div class="num" id="cd-min">00</div><div class="label">Min</div></div>
     <div class="cell"><div class="num" id="cd-sec">00</div><div class="label">Seg</div></div>
   </div>
+  <br></h2>
+  <h2>Para decir "sí, acepto"</h2>
 </section>
 
 <!-- ============ HISTORIA ============ -->
@@ -514,7 +523,7 @@
       <button type="submit" class="submit-btn">Enviar confirmación</button>
       <p id="rsvp-error" style="display:none; color:var(--blush); font-size:0.8rem; text-align:center;">No se pudo enviar. Revisa que el endpoint de Formspree esté configurado.</p>
     </form>
-    <p class="note">Las confirmaciones llegarán al correo con el que creaste tu cuenta de Formspree.</p>
+    <p class="note">Las confirmaciones al correo de la persona encargada</p>
   </div>
 </section>
 
@@ -532,22 +541,16 @@
     });
   });
 
-  // ---------- Nombres letra por letra ----------
-  const namesEl = document.getElementById('hero-names');
-  const namesHTML = namesEl.innerHTML;
-  const chars = namesHTML.split('');
-  let built = '', inTag = false, letterIndex = 0;
-  chars.forEach(ch => {
-    if(ch === '<'){ inTag = true; built += ch; }
-    else if(ch === '>'){ inTag = false; built += ch; }
-    else if(inTag){ built += ch; }
-    else if(ch === ' '){ built += ' '; }
-    else {
-      built += `<span class="letter" style="animation-delay:${0.4 + letterIndex*0.045}s">${ch}</span>`;
+  // ---------- Nombres letra por letra (respetando cada palabra completa) ----------
+  let letterIndex = 0;
+  document.querySelectorAll('#hero-names .name-word').forEach(wordEl => {
+    const letters = wordEl.textContent.split('');
+    wordEl.innerHTML = letters.map(ch => {
+      const span = `<span class="letter" style="animation-delay:${0.4 + letterIndex*0.045}s">${ch}</span>`;
       letterIndex++;
-    }
+      return span;
+    }).join('');
   });
-  namesEl.innerHTML = built;
 
   // ---------- Parallax de las enredaderas del hero ----------
   const vTop = document.querySelector('#hero .vine-top');
