@@ -1,0 +1,2 @@
+Pon aquí tu canción con el nombre "musica.mp3" (o cambia el "src" en index.html si usas otro nombre).
+El botón redondo de la esquina inferior derecha de la invitación la reproduce/pausa.

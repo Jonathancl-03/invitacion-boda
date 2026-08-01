@@ -1,0 +1,11 @@
+Pon aquí tus fotos con estos nombres exactos (o cambia el "src" en index.html si prefieres otros nombres):
+
+- hero.jpg        → Foto principal del hero (la de fondo, girasoles). Vertical, ideal 1600x2000px.
+- foto1.jpg        → Polaroid izquierda de "Nuestra historia"
+- foto2.jpg        → Polaroid derecha de "Nuestra historia"
+- galeria-hero.jpg → Foto de fondo grande de la sección "Momentos que atesoramos"
+- galeria1.jpg ... galeria6.jpg → Las 6 fotos de la cuadrícula de galería
+
+Cómo agregar cada foto: dentro del bloque .photo-slot correspondiente en index.html, agrega:
+  <img src="images/tu-foto.jpg" alt="Descripción">
+y puedes borrar el <div class="slot-label">...</div> de ese bloque.

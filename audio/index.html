@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentina &amp; Sebastián — Nos casamos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<div id="petals"></div>
+
+<!-- ============ NAV ============ -->
+<header id="navbar">
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#historia">Nosotros</a></li>
+      <li><a href="#camino">Historia</a></li>
+      <li><a href="#detalles-fila">Evento</a></li>
+    </ul>
+    <a href="#hero" class="nav-mono">V|S</a>
+    <ul class="nav-links">
+      <li><a href="#galeria-grid">Galería</a></li>
+      <li><a href="#rsvp">Confirmación</a></li>
+      <li><a href="#regalos">Regalos</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div id="mobile-menu">
+  <button id="mobile-menu-close" aria-label="Cerrar menú">&times;</button>
+  <a href="#hero">Inicio</a>
+  <a href="#historia">Nosotros</a>
+  <a href="#camino">Historia</a>
+  <a href="#detalles-fila">Evento</a>
+  <a href="#galeria-grid">Galería</a>
+  <a href="#rsvp">Confirmación</a>
+  <a href="#regalos">Regalos</a>
+</div>
+
+<!-- ============ MÚSICA ============ -->
+<!-- Reemplaza el src por tu propia canción (mp3) en el mismo directorio -->
+<audio id="bgm" loop preload="none">
+  <source src="audio/musica.mp3" type="audio/mpeg">
+</audio>
+<button id="music-toggle" aria-label="Reproducir música">
+  <div class="bars"><span></span><span></span><span></span></div>
+</button>
+
+<nav id="dot-nav">
+  <a href="#hero"></a>
+  <a href="#historia"></a>
+  <a href="#detalles-fila"></a>
+  <a href="#galeria-grid"></a>
+  <a href="#rsvp"></a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section id="hero">
+   <div class="photo-slot">
+    <img src="images/hero.jpg" alt="Foto principal de la pareja">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <p class="eyebrow">¡Nos casamos!</p>
+    <h1 class="names">Valentina<span class="amp">y</span>Sebastian</h1>
+    <div class="hero-heart">♡</div>
+    <p class="date-line">14 · Febrero · 2027</p>
+    <div class="hero-location">
+      <p class="place-line">Lima, Perú</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Casa+Hacienda+La+Villa,+La+Molina,+Lima" target="_blank" rel="noopener" class="btn-map">📍 Cómo llegar</a>
+    </div>
+    <a href="#rsvp" class="btn">Confirma tu asistencia ♡</a>
+  </div>
+</section>
+
+<!-- ============ NUESTRA HISTORIA ============ -->
+<section id="historia">
+  <div class="container">
+    <span class="eyebrow">Nuestra historia</span>
+    <div class="historia-grid">
+      <div class="polaroid tilt-left reveal">
+        <div class="tape"></div>
+        <div class="photo-slot"><img src="images/foto1.jpg" alt="foto1"></div>
+      </div>
+      <div class="historia-text reveal">
+        <span class="script">Todo comenzó con una mirada...</span>
+        <div class="heart-divider">♡</div>
+        <p class="body-text">Desde ese día supimos que queríamos escribir juntos todos nuestros días. Hoy, damos el siguiente paso y queremos que seas parte de nuestra historia.</p>
+        <a href="#camino" class="btn outline">Conócenos ♡</a>
+      </div>
+      <div class="polaroid tilt-right reveal">
+        <div class="tape"></div>
+        <div class="photo-slot"><img src="images/foto2.jpg" alt="foto2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DETALLES (fila de íconos) ============ -->
+<section id="detalles-fila">
+  <div class="container">
+    <span class="eyebrow">Detalles del evento</span>
+    <h2 class="reveal">El gran día</h2>
+    <div class="heart-divider reveal">♡</div>
+    <div class="icon-row">
+      <div class="icon-col reveal">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+        <div class="label">Fecha</div>
+        <div class="value">14 de febrero<br>de 2027</div>
+      </div>
+      <div class="icon-col reveal">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2 L14 8 L12 12 L10 8 Z"/><path d="M6 22c0-4 2.5-7 6-7s6 3 6 7"/><circle cx="12" cy="12" r="10"/></svg>
+        <div class="label">Ceremonia</div>
+        <div class="value">4:00 p.m.<br>Capilla Santa Rosa</div>
+      </div>
+      <div class="icon-col reveal">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M6 2h4l1 7a3 3 0 0 1-6 0zM14 2h4l1 7a3 3 0 0 1-6 0z"/><path d="M8 9v6M16 9v6M8 15h8M12 15v7"/></svg>
+        <div class="label">Recepción</div>
+        <div class="value">7:00 p.m.<br>Casa Hacienda La Villa</div>
+      </div>
+      <div class="icon-col reveal">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div class="label">Dirección</div>
+        <div class="value">Jr. Los Olivos 880<br>La Molina, Lima</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Jr.+Los+Olivos+880,+La+Molina,+Lima" target="_blank" rel="noopener" class="btn-map on-light small">📍 Ver mapa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA — hero de foto ============ -->
+<section id="galeria-hero">
+  <div class="photo-slot"><img src="images/galeria-hero.jpg" alt="galeria-hero"></div>
+  <div class="overlay"></div>
+  <div class="content reveal">
+    <p class="eyebrow">Galería</p>
+    <div class="heart-divider" style="color:var(--blush)">♡</div>
+    <h2>Momentos que atesoramos</h2>
+    <a href="#galeria-grid" class="btn">Ver fotos</a>
+  </div>
+</section>
+
+<!-- ============ GALERÍA — grid ============ -->
+<section id="galeria-grid">
+  <div class="container">
+    <!-- Reemplaza cada .g-item .photo-slot con tu <img> real -->
+    <div class="gallery-grid">
+      <div class="g-item g1 reveal"><div class="photo-slot"><img src="images/galeria-hero.jpg" alt="galeria-hero"></div></div>
+      <div class="g-item g2 reveal"><div class="photo-slot"><img src="images/galeria1.jpg" alt="galeria1"></div></div>
+      <div class="g-item g3 reveal"><div class="photo-slot"><img src="images/foto2.jpg" alt="foto2"></div></div>
+      <div class="g-item g4 reveal"><div class="photo-slot"><img src="images/foto1.jpg" alt="foto1"></div></div>
+      <div class="g-item g5 reveal"><div class="photo-slot"><img src="images/foto2.jpg" alt="foto2"></div></div>
+      <div class="g-item g6 reveal"><div class="photo-slot"><img src="images/foto1.jpg" alt="foto1"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COUNTDOWN ============ -->
+<section id="countdown">
+  <p class="eyebrow reveal">Faltan</p>
+  <h2 class="reveal">Para decir "sí, acepto"</h2>
+  <div class="clock reveal" id="clock">
+    <div class="cell"><div class="num" id="cd-days">00</div><div class="label">Días</div></div>
+    <div class="cell"><div class="num" id="cd-hours">00</div><div class="label">Horas</div></div>
+    <div class="cell"><div class="num" id="cd-min">00</div><div class="label">Min</div></div>
+    <div class="cell"><div class="num" id="cd-sec">00</div><div class="label">Seg</div></div>
+  </div>
+</section>
+
+<!-- ============ NUESTRO CAMINO ============ -->
+<section id="camino">
+  <div class="container">
+    <span class="eyebrow">Nuestro camino</span>
+    <h2 class="reveal">Cómo llegamos hasta aquí</h2>
+    <div class="timeline">
+      <div class="t-item reveal">
+        <div class="t-num">1</div>
+        <div class="t-body"><div class="t-year">2019</div><div class="t-title">Un café, una conversación</div><p>Nos conocimos por casualidad y hablamos durante horas sin darnos cuenta del tiempo.</p></div>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-num">2</div>
+        <div class="t-body"><div class="t-year">2021</div><div class="t-title">Nuestro primer viaje juntos</div><p>Descubrimos que viajar juntos —y perdernos un poco en el camino— era nuestro lugar favorito.</p></div>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-num">3</div>
+        <div class="t-body"><div class="t-year">2025</div><div class="t-title">La pregunta</div><p>Bajo un cielo lleno de estrellas, la respuesta fue un sí sin dudarlo.</p></div>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-num">4</div>
+        <div class="t-body"><div class="t-year">2027</div><div class="t-title">El gran día</div><p>Y ahora, con quienes más amamos, queremos celebrar el inicio de nuestra nueva historia.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DRESS CODE ============ -->
+<section id="dresscode">
+  <div class="container">
+    <span class="eyebrow">Código de vestimenta</span>
+    <h2 class="reveal">Elegante formal</h2>
+    <p class="reveal">Pedimos evitar el color blanco, reservado para la novia. Estos tonos nos encantarían verlos en la celebración.</p>
+    <div class="palette reveal">
+      <span style="background:#6B2737"></span>
+      <span style="background:#B8935F"></span>
+      <span style="background:#7C8B6F"></span>
+      <span style="background:#D9B8A8"></span>
+      <span style="background:#2B2620"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section id="rsvp">
+  <div class="container">
+    <span class="eyebrow reveal">RSVP</span>
+    <h2 class="reveal">Confírmanos tu asistencia</h2>
+    <p class="sub reveal">Antes del 30 de enero de 2027, por favor.</p>
+    <!-- Reemplaza esta URL por la de tu Google Apps Script (Implementar > Nueva implementación > copiar URL /exec) -->
+    <form id="rsvp-form" class="reveal" action="https://script.google.com/macros/s/AKfycbxxuMxC_0U9jwIsF6T1ULpoeh1w-ysxKp0TAMs_zlAva04akUu_k71poEfQqf41aUEQcg/exec" method="POST">
+      <div class="field">
+        <label for="nombre">Nombre completo</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+      </div>
+      <div class="field">
+        <label for="asistencia">¿Asistirás?</label>
+        <select id="asistencia" name="asistencia" required>
+          <option value="">Selecciona una opción</option>
+          <option value="si">Sí, ahí estaré</option>
+          <option value="no">No podré asistir</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="acompanantes">Número de acompañantes</label>
+        <input id="acompanantes" name="acompanantes" type="number" min="0" placeholder="0" value="0">
+      </div>
+      <div class="field">
+        <label for="mensaje">Mensaje para los novios (opcional)</label>
+        <textarea id="mensaje" name="mensaje" rows="3" placeholder="Escribe aquí..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Enviar confirmación</button>
+      <p id="rsvp-error" style="display:none; color:var(--blush); font-size:0.8rem; text-align:center;">No se pudo enviar. Revisa el endpoint configurado.</p>
+    </form>
+    <p class="note">Las confirmaciones llegarán a tu hoja de cálculo / correo configurado.</p>
+  </div>
+</section>
+
+<!-- ============ REGALOS ============ -->
+<section id="regalos">
+  <div class="container">
+    <span class="eyebrow">Regalos</span>
+    <h2 class="reveal">Tu presencia es nuestro mejor regalo</h2>
+    <p class="reveal">Si aun así deseas tener un detalle con nosotros, contamos con una mesa de regalos y cuenta de ahorros — escríbenos y con gusto te compartimos los datos.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <span class="script">Valentina &amp; Sebastián</span>
+  <p>Con todo nuestro cariño, gracias por ser parte de este día.</p>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
